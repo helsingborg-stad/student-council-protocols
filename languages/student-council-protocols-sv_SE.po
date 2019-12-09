@@ -1,0 +1,545 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: protocol Manager\n"
+"POT-Creation-Date: 2019-11-29 09:30+0100\n"
+"PO-Revision-Date: 2019-11-29 09:30+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: student-council-protocols.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: acf-fields/php/administration_unit.php:6
+#: acf-fields/php/administration_unit.php:10
+msgid "Administration unit"
+msgstr "Förvaltning"
+
+#: acf-fields/php/protocol_status.php:8 acf-fields/php/protocol_status.php:12
+#: source/php/PostTypes/Protocol.php:170
+msgid "Status"
+msgstr "Status"
+
+#: acf-fields/php/tax_color.php:8
+msgid "Taxonomy color"
+msgstr "Färg på taxonomi"
+
+#: acf-fields/php/tax_color.php:12
+msgid "Background color"
+msgstr "Bakgrundsfärg"
+
+#: acf-fields/php/tax_color.php:15
+msgid "Select a custom background color for the taxonomy."
+msgstr "Välj en anpassad bakgrundsfärg för taxonomin."
+
+#: source/php/Api/Events.php:205
+msgid "No events could be found."
+msgstr "Inga protokoll hittades"
+
+#: source/php/App.php:189
+msgid "All Protocols"
+msgstr "Alla protokoll"
+
+#: source/php/App.php:190
+msgid "Search all posts..."
+msgstr "Sök alla inlägg…"
+
+#: source/php/App.php:191
+msgid "Search all posts"
+msgstr "Sök alla inlägg"
+
+#: source/php/App.php:192
+msgid "Filter"
+msgstr "Filtrera"
+
+#: source/php/App.php:193
+msgid "Council"
+msgstr "Elevråd"
+
+#: source/php/App.php:194
+msgid "Politician"
+msgstr "Politiker & Tjänstemän"
+
+#: source/php/App.php:195
+msgid "All"
+msgstr "Alla"
+
+#: source/php/App.php:196
+msgid "All councils"
+msgstr "Alla elevråd"
+
+#: source/php/App.php:197
+msgid "All politicians"
+msgstr "Alla politiker"
+
+#: source/php/App.php:198
+msgid "All subjects"
+msgstr "Alla ämnen"
+
+#: source/php/App.php:199
+msgid "Written By"
+msgstr "Skriven av"
+
+#: source/php/App.php:200
+msgid "Subject"
+msgstr "Ämne"
+
+#: source/php/App.php:201
+msgid "Found"
+msgstr "Hittade"
+
+#: source/php/App.php:202 source/php/PostTypes/Protocol.php:376
+msgid "protocols"
+msgstr "protokoll"
+
+#: source/php/App.php:203
+msgid "Show as list"
+msgstr "Visa som lista"
+
+#: source/php/App.php:204
+msgid "Show as cards"
+msgstr "Visa som rutor"
+
+#: source/php/App.php:205
+msgid "Write a new protocol"
+msgstr "Skriv ett nytt protokoll"
+
+#: source/php/App.php:206
+msgid "Latest"
+msgstr "Senaste"
+
+#: source/php/App.php:207
+msgid "Most viewed"
+msgstr "Mest visade"
+
+#: source/php/App.php:208
+msgid "Comments"
+msgstr "Kommentarer"
+
+#: source/php/App.php:209 source/php/Module/Event/Event.php:389
+msgid "Previous"
+msgstr "Föregående"
+
+#: source/php/App.php:210 source/php/Module/Event/Event.php:388
+msgid "Next"
+msgstr "Nästa"
+
+#: source/php/App.php:211
+msgid "No protocols found"
+msgstr "Inga protokoll hittades"
+
+#: source/php/Module/Event/Event.php:15
+msgid "Event"
+msgstr ""
+
+#: source/php/Module/Event/Event.php:16
+msgid "Events"
+msgstr ""
+
+#: source/php/Module/Event/Event.php:17
+msgid "Outputs a list if upcoming events"
+msgstr ""
+
+#: source/php/Module/Event/Event.php:386
+#: source/php/Module/Event/views/event.blade.php:18
+msgid "More events"
+msgstr ""
+
+#: source/php/Module/Event/Event.php:387
+#: source/php/Module/Event/views/partials/list.blade.php:4
+#, fuzzy
+#| msgid "No %s found"
+msgid "No events found"
+msgstr "Inga %s hittades"
+
+#: source/php/Module/Event/Event.php:390
+#, fuzzy
+#| msgid "Search %s"
+msgid "Search"
+msgstr "Sök %s"
+
+#: source/php/Module/Event/Event.php:391
+#: source/php/Module/SubmitForm/views/formfields.blade.php:322
+#: source/php/Module/SubmitForm/views/formfields.blade.php:325
+msgid "From"
+msgstr ""
+
+#: source/php/Module/Event/Event.php:392
+#: source/php/Module/SubmitForm/views/formfields.blade.php:329
+#: source/php/Module/SubmitForm/views/formfields.blade.php:332
+msgid "To"
+msgstr ""
+
+#: source/php/Module/Event/Event.php:393
+msgid "date"
+msgstr ""
+
+#: source/php/Module/Event/Event.php:394
+msgid "Categories"
+msgstr "Kategorier"
+
+#: source/php/Module/Event/Event.php:395
+msgid "Tags"
+msgstr ""
+
+#: source/php/Module/Event/Event.php:396
+msgid "Age"
+msgstr ""
+
+#: source/php/Module/Event/Event.php:398
+msgid "Filter on events that is targeted for given the age"
+msgstr ""
+
+#: source/php/Module/Event/Event.php:401
+msgid "years"
+msgstr ""
+
+#: source/php/Module/Event/Event.php:402
+msgid "Select age"
+msgstr ""
+
+#: source/php/Module/Event/views/partials/list.blade.php:16
+msgid "Today"
+msgstr ""
+
+#: source/php/Module/Event/views/partials/list.blade.php:59
+#: source/php/Module/SubmitForm/views/formfields.blade.php:69
+#: source/php/Module/SubmitForm/views/formfields.blade.php:88
+#: source/php/PostTypes/Protocol.php:329
+msgid "Date"
+msgstr "Datum"
+
+#: source/php/Module/Event/views/partials/list.blade.php:66
+#: source/php/Module/Location/Location.php:12
+msgid "Location"
+msgstr "Plats"
+
+#: source/php/Module/Location/Location.php:13
+#, fuzzy
+#| msgid "Location"
+msgid "Locations"
+msgstr "Plats"
+
+#: source/php/Module/Location/Location.php:14
+msgid "Displays a specific location"
+msgstr ""
+
+#: source/php/Module/Location/Location.php:44
+#, fuzzy
+#| msgid "Location"
+msgid "Choose location"
+msgstr "Plats"
+
+#: source/php/Module/Location/Location.php:64
+msgid "Something went wrong, pleae check your API url."
+msgstr ""
+
+#: source/php/Module/Location/Location.php:78
+#, fuzzy
+#| msgid "No %s found"
+msgid "No locations found"
+msgstr "Inga %s hittades"
+
+#: source/php/Module/Location/views/location.blade.php:18
+msgid "Show map"
+msgstr ""
+
+#: source/php/Module/Location/views/location.blade.php:30
+msgid "Closed"
+msgstr ""
+
+#: source/php/Module/Location/views/location.blade.php:65
+msgid "Website"
+msgstr ""
+
+#: source/php/Module/SubmitForm/SubmitForm.php:12
+msgid "Event form"
+msgstr ""
+
+#: source/php/Module/SubmitForm/SubmitForm.php:13
+msgid "Event forms"
+msgstr ""
+
+#: source/php/Module/SubmitForm/SubmitForm.php:14
+msgid "Displays an event submit form"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:51
+#: source/php/Module/SubmitForm/views/formfields.blade.php:63
+msgid "Single occurrence"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:55
+msgctxt "Event recurrence rules"
+msgid "Schedule"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:67
+#: source/php/Module/SubmitForm/views/formfields.blade.php:167
+#: source/php/Module/SubmitForm/views/formfields.blade.php:171
+msgid "Start date"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:73
+#: source/php/Module/SubmitForm/views/formfields.blade.php:142
+msgid "Start time"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:86
+#: source/php/Module/SubmitForm/views/formfields.blade.php:175
+#: source/php/Module/SubmitForm/views/formfields.blade.php:179
+msgid "End date"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:92
+#: source/php/Module/SubmitForm/views/formfields.blade.php:155
+msgid "End time"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:107
+#: source/php/Module/SubmitForm/views/formfields.blade.php:185
+msgid "Add"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:118
+msgid "Recurrence rules for weekly recurring event"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:122
+msgid "Weekday"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:124
+msgid "The event will occur on this weekday."
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:126
+msgid "Monday"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:127
+msgid "Tuesday"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:128
+msgid "Wednesday"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:129
+msgid "Thursday"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:130
+msgid "Friday"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:131
+msgid "Saturday"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:132
+msgid "Sunday"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:136
+#: source/php/Module/SubmitForm/views/formfields.blade.php:139
+msgid "Weekly interval"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:137
+msgid "Enter the weekly interval when the event occurs. 1 equals every week."
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:144
+msgid "Start time for the event"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:157
+msgid "End time for the event"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:169
+msgid "When the recurring event period starts"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:177
+msgid "When the recurring event period ends"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:375
+msgid "Elevator/ramp"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:379
+msgid "Accessible toilet"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:395
+#: source/php/Module/SubmitForm/views/formfields.blade.php:411
+msgid "Loading"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:434
+msgid "Before you can upload an image, you need to confirm the following terms"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:438
+msgid "I have the right to use this image to promote this event."
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:442
+msgid "There are no identifiable persons on the image/images."
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:446
+msgid "Upload an image"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:457
+msgid "Contact details"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:458
+msgid "Enter your contact details below for eventual questions."
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:477
+#: source/php/Module/SubmitForm/views/formfields.blade.php:481
+msgid "Repeat email"
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:503
+msgid "Done? Click here to submit your event for review."
+msgstr ""
+
+#: source/php/Module/SubmitForm/views/formfields.blade.php:513
+msgid "Send"
+msgstr ""
+
+#: source/php/PostTypes/Protocol.php:154
+msgid "protocol"
+msgstr "Protokoll"
+
+#: source/php/PostTypes/Protocol.php:155
+#, fuzzy
+#| msgid "protocols"
+msgid "Protocols"
+msgstr "Idéer"
+
+#: source/php/PostTypes/Protocol.php:171
+msgid "Statuses"
+msgstr "Statusar"
+
+#: source/php/PostTypes/Protocol.php:203
+msgid "Target group"
+msgstr ""
+
+#: source/php/PostTypes/Protocol.php:204
+msgid "Target groups"
+msgstr ""
+
+#: source/php/PostTypes/Protocol.php:244
+#, php-format
+msgid "Search %s"
+msgstr "Sök %s"
+
+#: source/php/PostTypes/Protocol.php:245
+#, php-format
+msgid "All %s"
+msgstr ""
+
+#: source/php/PostTypes/Protocol.php:246 source/php/PostTypes/Protocol.php:247
+#, php-format
+msgid "Parent %s:"
+msgstr "Förälder %s:"
+
+#: source/php/PostTypes/Protocol.php:248
+#, php-format
+msgid "Edit %s"
+msgstr "Redigera %s"
+
+#: source/php/PostTypes/Protocol.php:249
+#, php-format
+msgid "Update %s"
+msgstr ""
+
+#: source/php/PostTypes/Protocol.php:250
+#, fuzzy, php-format
+#| msgid "Add new %s"
+msgid "Add New %s"
+msgstr "Skapa ny %s"
+
+#: source/php/PostTypes/Protocol.php:251
+#, fuzzy, php-format
+#| msgid "New %s"
+msgid "New %s Name"
+msgstr "Ny %s"
+
+#: source/php/PostTypes/Protocol.php:279
+msgid "Incoming"
+msgstr "Inkommande"
+
+#: source/php/PostTypes/Protocol.php:328
+msgid "Title"
+msgstr "Titel"
+
+#: source/php/Shortcode.php:103
+msgid "Read more"
+msgstr "Läs mer"
+
+#. Plugin Name of the plugin/theme
+msgid "Student Council Protocols"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/helsingborg-stad/student-council-protocols"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Plugin to post and view protocols."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Max Frederiksen"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/helsingborg-stad"
+msgstr ""
+
+#, php-format
+#~ msgid "View %s"
+#~ msgstr "Visa %s"
+
+#, php-format
+#~ msgid "No %s found in trash"
+#~ msgstr "Inga %s hittades i papperskorgen"
+
+#~ msgid "Administration units"
+#~ msgstr "Förvaltningar"
+
+#~ msgid "Category"
+#~ msgstr "Kategori"
+
+#~ msgid "Share page"
+#~ msgstr "Dela sidan"
+
+#~ msgid "Share on"
+#~ msgstr "Dela på"
+
+#~ msgid "Share with e-mail"
+#~ msgstr "Dela med e-post"
+
+#~ msgid "Testing"
+#~ msgstr "Testar"

@@ -1,0 +1,77 @@
+{
+  "name": "student-council-protocols",
+  "version": "1.0.0",
+  "description": "Plugin to post and view protocols.",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/helsingborg-stad/student-council-protocols.git"
+  },
+  "author": "Max Frederiksen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/helsingborg-stad/student-council-protocols/issues"
+  },
+  "homepage": "https://github.com/helsingborg-stad/student-council-protocols",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "del": "^5.1.0",
+    "es6-promise": "^4.2.8",
+    "event-stream": "^4.0.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-jshint": "^2.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-terser": "^1.2.0",
+    "gulp-uglify": "^1.5.4",
+    "hbg-react": "^0.11.10",
+    "isomorphic-fetch": "^2.2.1",
+    "jshint": "^2.10.2",
+    "node-notifier": "^6.0.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "reactify": "^1.1.1",
+    "rev-del": "^2.0.0",
+    "run-sequence": "^2.2.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "ie": "11"
+          }
+        }
+      ],
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-proposal-export-default-from",
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "dependencies": {
+    "react-paginate": "^6.3.2"
+  }
+}

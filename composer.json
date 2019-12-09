@@ -1,0 +1,24 @@
+{
+    "name": "helsingborg-stad/student-council-protocols",
+    "description": "Plugin to gather and manage protocols",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Max Frederiksen",
+            "email": "max.frederiksen@ecsolutions.se"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "composer/installers": "~1.0",
+        "helsingborg-stad/acf-export-manager": ">=1.0.0",
+        "philo/laravel-blade": "^3.1"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/helsingborg-stad/acf-export-manager.git"
+        }
+    ]
+}

@@ -32,7 +32,7 @@ class Protocol
         add_filter('ModularityFormBuilder/excluded_fields/front', array($this, 'excludedFields'), 10, 3);
         add_filter('Municipio/taxonomy/tag_style', array($this, 'setStatusColor'), 10, 3);
         add_filter('manage_edit-' . $this->postTypeSlug . '_columns', array($this, 'tableColumns'), 11);
-        add_filter('ModularityFormBuilder/options/post_types', array($this, 'addSelectablePostType'));
+        add_filter('ModularityFormBuilder/options/post_types', array($this, 'addSelectablePostType'), 10);
     }
 
     public function addProtocolStatusPost($post)
@@ -373,7 +373,7 @@ class Protocol
      */
     public function addSelectablePostType($postTypes)
     {
-        $postTypes[$this->postTypeSlug] = __('protocols', 'student-council-protocols');
+        $postTypes[$this->postTypeSlug] = __('Protocols', 'student-council-protocols');
         return $postTypes;
     }
 }

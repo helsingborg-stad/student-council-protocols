@@ -8,13 +8,14 @@ class App
 {
     public function __construct()
     {
+        new PostTypes\Protocol();
+
         add_action('init', array($this, 'initialize'));
         add_action('wp_ajax_nopriv_userVisitAjax', array($this, 'userVisitAjax'));
         add_action('wp_ajax_userVisitAjax', array($this, 'userVisitAjax'));
         add_action('wp_enqueue_scripts', array($this, 'script'), 5);
         add_action('plugins_loaded', function () {
             if (class_exists('\\ModularityFormBuilder\\Entity\\PostType')) {
-                new PostTypes\Protocol();
                 new Shortcode();
             }
         });

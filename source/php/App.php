@@ -213,7 +213,8 @@ class App
         );
 
         wp_localize_script('protocol-react-index', 'reactData', array(
-                'nonce' => wp_create_nonce('wp_rest'), 
+                'nonce' => wp_create_nonce('wp_rest'),
+                'site_url' => get_site_url(),
                 'translations' => $translations
             ));
     }

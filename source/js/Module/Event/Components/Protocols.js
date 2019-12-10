@@ -69,9 +69,9 @@ class Protocols extends React.Component {
         const date = this.getDate();
         const params = this.getParams();
 
-        const baseUrl = 'https://single.local/wp-json/wp/v2/protocol';
+        const baseUrl = `${reactData.site_url}/wp-json/wp/v2/protocol`;
         const wpNonce = `?_wpnonce=${reactData.nonce}`;
-        const perPage = `&per_page=${protocolsPerPage}`
+        const perPage = `&per_page=${protocolsPerPage}`;
         const offSet = `&offset=${offset}`;
 
         const filteredGroupValue = this.filterTargetValue(targetGroupValue);

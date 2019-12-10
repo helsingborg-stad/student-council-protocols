@@ -158,11 +158,23 @@ class App
     {
         global $post;
 
-        wp_register_script('student-council-protocols', STUDENTCOUNCILPROTOCOLS_URL . '/dist/js/student-council-protocols.min.js', array('jQuery'), '', true);
+        wp_register_script(
+            'student-council-protocols', 
+            STUDENTCOUNCILPROTOCOLS_URL.'/dist/'.\StudentCouncilProtocols\Helper\CacheBust::name(
+                'student-user-visit.bundle.js'
+            ), 
+            array('jQuery'), 
+            '', 
+            true
+        );
+
         if (defined('G_GEOCODE_KEY') && G_GEOCODE_KEY) {
             wp_register_script('google-maps-api', '//maps.googleapis.com/maps/api/js?key=' . G_GEOCODE_KEY . '', array(), '', true);
         }
-        wp_register_style('student-council-protocols', STUDENTCOUNCILPROTOCOLS_URL . '/dist/css/student-council-protocols.min.css');
+
+        wp_register_style('student-council-protocols', STUDENTCOUNCILPROTOCOLS_URL.'/dist/'.\StudentCouncilProtocols\Helper\CacheBust::name(
+            'student-styles.min.css'
+        ));
 
         if (is_object($post) && $post->post_type == 'protocol') {
             wp_enqueue_script('student-council-protocols');
@@ -179,7 +191,7 @@ class App
         wp_enqueue_script(
             'protocol-react-index',
             STUDENTCOUNCILPROTOCOLS_URL.'/dist/'.\StudentCouncilProtocols\Helper\CacheBust::name(
-                'js/Module/Event/Index.js'
+                'student-react.bundle.js'
             ),
             array('jquery', 'react', 'react-dom'),
             false,

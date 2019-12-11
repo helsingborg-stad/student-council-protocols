@@ -1,5 +1,5 @@
 {
-  "student-react.js": "student-react.bundle.js",
-  "student-styles.css": "student-styles.min.css",
-  "student-user-visit.js": "student-user-visit.bundle.js"
+  "css/student-styles.css": "css/student-styles.min.css",
+  "js/student-react.js": "js/student-react.bundle.js",
+  "js/student-user-visit.js": "js/student-user-visit.bundle.js"
 }

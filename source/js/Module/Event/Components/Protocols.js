@@ -54,6 +54,10 @@ class Protocols extends React.Component {
         return (window.location.search.indexOf('subject') !== -1) ? window.location.search.split('=')[1] : null;
     }
 
+    getBaseUrl = (query) => {
+        return `${reactData.site_url}/wp-json/wp/v2/${query}`
+    }
+
     getFetchUrl = () => {
 
         const { 
@@ -69,7 +73,7 @@ class Protocols extends React.Component {
         const date = this.getDate();
         const params = this.getParams();
 
-        const baseUrl = `${reactData.site_url}/wp-json/wp/v2/protocol`;
+        const baseUrl = this.getBaseUrl('protocol');
         const wpNonce = `?_wpnonce=${reactData.nonce}`;
         const perPage = `&per_page=${protocolsPerPage}`;
         const offSet = `&offset=${offset}`;
@@ -102,9 +106,9 @@ class Protocols extends React.Component {
     }
 
     getAllUsers = () => {
-        const url = `https://single.local/wp-json/wp/v2/users`;
+        const baseUrl = this.getBaseUrl('users');
 
-        fetch(url).then(response => {
+        fetch(baseUrl).then(response => {
             return response.json();
         }).then(res => {
             this.setState({

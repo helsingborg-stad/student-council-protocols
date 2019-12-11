@@ -161,7 +161,7 @@ class App
         wp_register_script(
             'student-council-protocols', 
             STUDENTCOUNCILPROTOCOLS_URL.'/dist/'.\StudentCouncilProtocols\Helper\CacheBust::name(
-                'student-user-visit.bundle.js'
+                'student-user-visit.js'
             ), 
             array('jQuery'), 
             '', 
@@ -173,7 +173,7 @@ class App
         }
 
         wp_register_style('student-council-protocols', STUDENTCOUNCILPROTOCOLS_URL.'/dist/'.\StudentCouncilProtocols\Helper\CacheBust::name(
-            'student-styles.min.css'
+            'student-styles.css'
         ));
 
         if (is_object($post) && $post->post_type == 'protocol') {
@@ -191,7 +191,7 @@ class App
         wp_enqueue_script(
             'protocol-react-index',
             STUDENTCOUNCILPROTOCOLS_URL.'/dist/'.\StudentCouncilProtocols\Helper\CacheBust::name(
-                'student-react.bundle.js'
+                'student-react.js'
             ),
             array('jquery', 'react', 'react-dom'),
             false,

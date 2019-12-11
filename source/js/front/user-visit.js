@@ -1,7 +1,8 @@
-studentCouncilProtocols = studentCouncilProtocols || {};
-studentCouncilProtocols.protocol = studentCouncilProtocols.protocol || {};
+// studentCouncilProtocols = studentCouncilProtocols || {};
+// studentCouncilProtocols.protocol = studentCouncilProtocols.protocol || {};
 
-studentCouncilProtocols.protocol.userVisit = (function ($) {
+// studentCouncilProtocols.protocol.userVisit = 
+(function ($) {
 
     function userVisit() {
         $(function() {

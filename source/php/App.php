@@ -80,7 +80,7 @@ class App
         register_rest_route(
             'wp/v2',
             '/users',
-            array(
+            array( 
                 'methods' => \WP_REST_Server::READABLE,
                 'callback' => array($this, 'getUsers'),
             )
@@ -222,7 +222,7 @@ class App
 
         wp_localize_script('protocol-react-index', 'reactData', array(
                 'nonce' => wp_create_nonce('wp_rest'),
-                'site_url' => get_site_url(),
+                'rest_url' => rest_url(),
                 'translations' => $translations
             ));
     }

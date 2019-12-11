@@ -55,7 +55,7 @@ class Protocols extends React.Component {
     }
 
     getBaseUrl = (query) => {
-        return `${reactData.site_url}/wp-json/wp/v2/${query}`
+        return `${reactData.rest_url}wp/v2/${query}`
     }
 
     getFetchUrl = () => {

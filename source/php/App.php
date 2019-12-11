@@ -79,7 +79,7 @@ class App
 
         register_rest_route(
             'wp/v2',
-            '/users',
+            '/protocols/users',
             array( 
                 'methods' => \WP_REST_Server::READABLE,
                 'callback' => array($this, 'getUsers'),

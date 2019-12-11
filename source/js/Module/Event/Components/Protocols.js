@@ -106,11 +106,13 @@ class Protocols extends React.Component {
     }
 
     getAllUsers = () => {
-        const baseUrl = this.getBaseUrl('users');
+        const baseUrl = this.getBaseUrl('protocols/users');
+        console.log(baseUrl, 'in getAllUsers');
 
         fetch(baseUrl).then(response => {
             return response.json();
         }).then(res => {
+            console.log(res, 'response from fetch in getAllUsers');
             this.setState({
                 allAuthors: [{
                     politicians: res.politicians,
@@ -124,7 +126,6 @@ class Protocols extends React.Component {
         });
     }
 
-    
     getAllProtocols = () => {
 
         this.setState({
@@ -149,6 +150,7 @@ class Protocols extends React.Component {
             })
         }).then(res => {
 
+            console.log(res, 'response from getAllProtocols');
             if (res.data.length > 0) {
 
                 const mappedSubjects = res.data[0].metadata.data.allSubjects.map(subject => subject.value);
@@ -180,14 +182,6 @@ class Protocols extends React.Component {
         }).catch(err => {
             console.log(err);
         })
-    }
-
-    setProtocols = () => {
-        this.setState({
-            filteredProtocols: this.filterAllProtocols(),
-            targetAuthorValue: this.checkAuthorTargetValue(),
-            authors: this.checkAuthors()
-        });
     }
 
     filterTargetValue = targetValue => {
@@ -332,6 +326,10 @@ class Protocols extends React.Component {
 
     checkAuthors = () => {
         const { allAuthors, targetGroupValue } = this.state;
+
+        console.log('log in checkAuthors')
+        console.log('AllAuthors: ', allAuthors)
+        console.log('targetGroupValue: ', targetGroupValue)
 
         if (targetGroupValue == "all") {
             let authorCollection = [...allAuthors[0].schools, ...allAuthors[0].politicians].sort();

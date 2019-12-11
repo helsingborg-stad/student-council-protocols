@@ -41,15 +41,8 @@ class App
         });
 
         add_filter('Municipio/blade/view_paths', array($this, 'viewPaths'), 10, 1);
-
-        // add_filter('excerpt_length', array($this, 'set_excerpt_length'), 999);
         add_action('rest_api_init', array($this, 'registerRestApiMeta'));
     }
-
-    // public function set_excerpt_length($length)
-    // {
-    //     return 5;
-    // }
 
     public function registerRestApiMeta()
     {

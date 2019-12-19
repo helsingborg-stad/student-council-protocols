@@ -21,13 +21,11 @@ class Protocol
         );
         $this->taxonomyStatus();
         $this->taxonomyTargetGroup();
-        // $this->taxonomyCategory();
         
         add_action('init', array($this, 'register'), 9);
         add_action('save_post_' . $this->postTypeSlug, array($this, 'setDefaultData'), 10, 3);
         add_action('Municipio/blog/post_info', array($this, 'addProtocolStatusPost'), 9, 1);
         add_filter('wp_insert_post_data', array($this, 'allowComments'), 99, 2);
-        // add_filter('dynamic_sidebar_before', array($this, 'contentBeforeSidebar'));
         add_filter('is_active_sidebar', array($this, 'isActiveSidebar'), 11, 2);
         add_filter('ModularityFormBuilder/excluded_fields/front', array($this, 'excludedFields'), 10, 3);
         add_filter('Municipio/taxonomy/tag_style', array($this, 'setStatusColor'), 10, 3);
@@ -70,51 +68,6 @@ class Protocol
 
         return $isActiveSidebar;
     }
-
-    /**
-     * Render custom content in sidebar
-     * @param string $sidebar
-     */
-    // public function contentBeforeSidebar($sidebar)
-    // {
-    //     global $post;
-
-    //     if ($sidebar === 'right-sidebar' && $this->isProtocolPage()) {
-    //         $data = \ModularityFormBuilder\Entity\PostType::gatherFormData($post);
-    //         $data['showSocial'] = get_field('post_show_share', $post->ID);
-    //         $data['showAuthor'] = is_user_logged_in() && get_field('post_show_author', $post->ID) && $post->post_author > 0;
-    //         $data['authorUrl'] = function_exists('municipio_intranet_get_user_profile_url') ? municipio_intranet_get_user_profile_url($post->post_author) : null;
-    //         $data['unit'] = class_exists('\Intranet\User\AdministrationUnits') ? \Intranet\User\AdministrationUnits::getUsersAdministrationUnitIntranet($post->post_author) : null;
-    //         $uploadFolder = wp_upload_dir();
-    //         $data['uploadFolder'] = $uploadFolder['baseurl'] . '/modularity-form-builder/';
-    //         $data['profileImage'] = !empty($post->post_author) && get_the_author_meta('user_profile_picture', $post->post_author) ? \Municipio\Helper\Image::resize(get_the_author_meta('user_profile_picture', $post->post_author), 200, 200) : null;
-
-    //         $tags = wp_get_post_terms($post->ID, 'hashtag');
-    //         $tagIds = array();
-    //         if (!is_wp_error($tags) && !empty($tags)) {
-    //             foreach($tags as $tag) {
-    //                 $tagIds[] = $tag->term_id;
-    //             }
-    //         }
-
-    //         $data['relatedProtocols'] = get_posts(array(
-    //             'numberposts' => 3,
-    //             'post__not_in' => array($post->ID),
-    //             'post_type' => $this->postTypeSlug,
-    //             'tax_query' => array(
-    //                 array(
-    //                     'taxonomy' => 'protocol_tags',
-    //                     'field' => 'hashtag',
-    //                     'terms' => $tagIds,
-    //                 )
-    //             )
-    //         ));
-
-    //         echo \StudentCouncilProtocols\App::blade('protocol-widgets', $data);
-    //     } elseif ($sidebar === 'bottom-sidebar' && $this->isprotocolPage()) {
-    //         echo \StudentCouncilProtocols\App::blade('protocol-mail-modal');
-    //     }
-    // }
 
     /**
      * Registers protocol post type
@@ -219,12 +172,6 @@ class Protocol
             remove_meta_box('tagsdiv-protocol_administration_units', $this->postTypeSlug, 'side');
         });
 
-        // echo '<pre>';
-        // print_r('asdasdsa');
-        // print_r(taxonomy_exists('protocol_target_group'));
-        // echo '</pre>';
-        // die();
-
         //Add filter
         new \ModularityFormBuilder\Entity\Filter(
             $taxonomyTargetGroup->slug,
@@ -255,25 +202,35 @@ class Protocol
         $this->args['labels'] = $labels;
 
         register_taxonomy($this->slug, $this->postTypeSlug, $this->args);
-
-        // Register new taxonomy
-        // $taxonomyStatus = new \ModularityFormBuilder\Entity\Taxonomy(
-        //     __('Subjext', 'student-council-protocols'),
-        //     __('Subjexts', 'student-council-protocols'),
-        //     'protocol_subjects',
-        //     array($this->postTypeSlug),
-        //     array(
-        //         'hierarchical'      => true,
-        //         'public'            => true,
-        //         'show_ui'           => true,
-        //         'show_in_nav_menus' => true,
-        //         '_builtin'          => false,
-        //     )
-        // );
     }
 
     public function setDefaultData($postId, $post, $update)
     {
+
+        $userMeta = get_user_meta(get_current_user_id());
+        $postFormData = $_POST;
+
+        if (!empty($userMeta['name_of_council_or_politician']) && !empty($userMeta['target_group']) && !empty($postFormData) && !empty($postFormData['valj-amnen-kategorier'])) {
+
+            $name = $userMeta['name_of_council_or_politician'][0];
+            $targetGroup = $userMeta['target_group'][0];
+            $subjects = $postFormData['valj-amnen-kategorier'];
+
+            $term = term_exists($targetGroup, 'protocol_target_groups');
+            if ($term !== 0 && $term !== null) {
+                wp_set_object_terms($postId, (int)$term['term_id'], 'protocol_target_groups');
+            } else {
+                $newTerm = wp_insert_term($targetGroup, 'protocol_target_groups');
+                if (!is_wp_error($newTerm)) {
+                    wp_set_object_terms($postId, (int)$newTerm['term_id'], 'protocol_target_groups');
+                }
+            }
+
+            update_post_meta($postId, 'subjects', $subjects);
+            update_post_meta($postId, 'name_of_council_or_politician', $name);
+            update_post_meta($postId, 'target_group', $targetGroup);
+        }
+
         if (!$update) {
             // Set default status
             wp_set_object_terms($postId, __('Incoming', 'student-council-protocols'), 'protocol_statuses');

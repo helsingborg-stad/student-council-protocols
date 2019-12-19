@@ -197,6 +197,7 @@ class App
         $translations = array(
             'pageTitle' => __('All Protocols', 'student-council-protocols'),
             'searchPlaceholder' => __('Search all posts...', 'student-council-protocols'),
+            'searchPlaceholderError' => __('You have to fill in this field.', 'student-council-protocols'),
             'searchAllPosts' => __('Search all posts', 'student-council-protocols'),
             'filterTitle' => __('Filter', 'student-council-protocols'),
             'council' => __('Council', 'student-council-protocols'),
@@ -217,7 +218,7 @@ class App
             'comments' => __('Comments', 'student-council-protocols'),
             'previous' => __('Previous', 'student-council-protocols'),
             'next' => __('Next', 'student-council-protocols'),
-            'noProtocolsFound' => __('No protocols found', 'student-council-protocols')
+            'noProtocolsFound' => __('No protocols found', 'student-council-protocols'),
         );
 
         wp_localize_script('protocol-react-index', 'reactData', array(

@@ -12,7 +12,8 @@ class Protocols extends React.Component {
         super(props);
 
         const {
-            showAsList
+            showAsList,
+            searchPlaceholder
         } = reactData.translations;
 
         this.state = {
@@ -35,7 +36,9 @@ class Protocols extends React.Component {
             targetSubjectValue: this.translatedString('All subjects'),
             targetOrderValue: 'latest',
             showAs: 'cards',
-            showAsText: showAsList
+            showAsText: showAsList,
+            searchPlaceholderText: searchPlaceholder,
+            searchError: false
         };
 
         this.paginateRef = React.createRef();
@@ -107,12 +110,10 @@ class Protocols extends React.Component {
 
     getAllUsers = () => {
         const baseUrl = this.getBaseUrl('protocols/users');
-        console.log(baseUrl, 'in getAllUsers');
 
         fetch(baseUrl).then(response => {
             return response.json();
         }).then(res => {
-            console.log(res, 'response from fetch in getAllUsers');
             this.setState({
                 allAuthors: [{
                     politicians: res.politicians,
@@ -150,7 +151,6 @@ class Protocols extends React.Component {
             })
         }).then(res => {
 
-            console.log(res, 'response from getAllProtocols');
             if (res.data.length > 0) {
 
                 const mappedSubjects = res.data[0].metadata.data.allSubjects.map(subject => subject.value);
@@ -246,12 +246,18 @@ class Protocols extends React.Component {
 
     handleKeyUp = e => {
         e.persist();
-        if (e.keyCode === 13) {
-            this.searchSubmit(e);
-        }
-        if (!e.target.value) {
-            this.getAllProtocols();
-        }
+
+        this.setState({
+            searchPlaceholderText: reactData.translations.searchPlaceholder,
+            searchError: false
+        }, () => {
+            if (e.keyCode === 13) {
+                this.searchSubmit(e);
+            }
+            if (!e.target.value) {
+                this.getAllProtocols();
+            }
+        })
     }
 
     /**
@@ -262,11 +268,19 @@ class Protocols extends React.Component {
         e.preventDefault();
         e.persist();
         this.paginateRef.current.state.selected = 0
-        this.setState({
-            targetGroupValue: 'all',
-            targetAuthorValue: 'Alla ...',
-            targetSubjectValue: this.translatedString('All subjects')
-        }, () => this.getAllProtocols());
+        if (this.state.searchString === '') {
+            this.setState({
+                searchPlaceholderText: reactData.translations.searchPlaceholderError,
+                searchError: true
+            })
+        } else {
+            this.setState({
+                targetGroupValue: 'all',
+                targetAuthorValue: 'Alla ...',
+                targetSubjectValue: this.translatedString('All subjects')
+            }, () => this.getAllProtocols());
+        }
+
     
     };
 
@@ -327,10 +341,6 @@ class Protocols extends React.Component {
     checkAuthors = () => {
         const { allAuthors, targetGroupValue } = this.state;
 
-        console.log('log in checkAuthors')
-        console.log('AllAuthors: ', allAuthors)
-        console.log('targetGroupValue: ', targetGroupValue)
-
         if (targetGroupValue == "all") {
             let authorCollection = [...allAuthors[0].schools, ...allAuthors[0].politicians].sort();
             return ['Alla ...', ...authorCollection];
@@ -389,11 +399,12 @@ class Protocols extends React.Component {
             filteredProtocols,
             pageCount,
             selectedPage,
+            searchError,
+            searchPlaceholderText
         } = this.state;
 
         const {
             pageTitle,
-            searchPlaceholder,
             searchAllPosts,
             previous,
             next
@@ -403,7 +414,7 @@ class Protocols extends React.Component {
             <div>
                 <div className="container">
                     <h1 className="protocols-title">{pageTitle}</h1>
-                    <SearchBar updateSearchString={this.updateSearchString} handleKeyUp={this.handleKeyUp} clickEvent={this.searchSubmit} searchPlaceholderString={searchPlaceholder} searchAllPostsString={searchAllPosts}/>
+                    <SearchBar updateSearchString={this.updateSearchString} handleKeyUp={this.handleKeyUp} searchSubmitHandler={this.searchSubmit} searchPlaceholderString={searchPlaceholderText} searchAllPostsString={searchAllPosts} searchError={searchError}/>
                     <Filters state={this.state} filterHandler={this.filterHandler} translations={reactData.translations}/>
                     <ShowAsList translations={reactData.translations} state={this.state} showAsHandler={this.showAsHandler}/>
                 </div>

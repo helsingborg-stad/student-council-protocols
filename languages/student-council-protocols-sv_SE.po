@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: protocol Manager\n"
-"POT-Creation-Date: 2019-11-29 09:30+0100\n"
-"PO-Revision-Date: 2019-11-29 09:30+0100\n"
+"POT-Creation-Date: 2019-12-18 14:42+0100\n"
+"PO-Revision-Date: 2019-12-18 14:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -43,99 +43,99 @@ msgstr "Bakgrundsfärg"
 msgid "Select a custom background color for the taxonomy."
 msgstr "Välj en anpassad bakgrundsfärg för taxonomin."
 
-#: source/php/Api/Events.php:205
-msgid "No events could be found."
-msgstr "Inga protokoll hittades"
-
-#: source/php/App.php:189
+#: source/php/App.php:198
 msgid "All Protocols"
 msgstr "Alla protokoll"
 
-#: source/php/App.php:190
+#: source/php/App.php:199
 msgid "Search all posts..."
 msgstr "Sök alla inlägg…"
 
-#: source/php/App.php:191
+#: source/php/App.php:200
+msgid "You have to fill in this field."
+msgstr "Du måste fylla i detta fältet"
+
+#: source/php/App.php:201
 msgid "Search all posts"
 msgstr "Sök alla inlägg"
 
-#: source/php/App.php:192
+#: source/php/App.php:202
 msgid "Filter"
 msgstr "Filtrera"
 
-#: source/php/App.php:193
+#: source/php/App.php:203
 msgid "Council"
 msgstr "Elevråd"
 
-#: source/php/App.php:194
+#: source/php/App.php:204
 msgid "Politician"
 msgstr "Politiker & Tjänstemän"
 
-#: source/php/App.php:195
+#: source/php/App.php:205
 msgid "All"
 msgstr "Alla"
 
-#: source/php/App.php:196
+#: source/php/App.php:206
 msgid "All councils"
 msgstr "Alla elevråd"
 
-#: source/php/App.php:197
+#: source/php/App.php:207
 msgid "All politicians"
 msgstr "Alla politiker"
 
-#: source/php/App.php:198
+#: source/php/App.php:208
 msgid "All subjects"
 msgstr "Alla ämnen"
 
-#: source/php/App.php:199
+#: source/php/App.php:209
 msgid "Written By"
 msgstr "Skriven av"
 
-#: source/php/App.php:200
+#: source/php/App.php:210
 msgid "Subject"
 msgstr "Ämne"
 
-#: source/php/App.php:201
+#: source/php/App.php:211
 msgid "Found"
 msgstr "Hittade"
 
-#: source/php/App.php:202 source/php/PostTypes/Protocol.php:376
+#: source/php/App.php:212
 msgid "protocols"
 msgstr "protokoll"
 
-#: source/php/App.php:203
+#: source/php/App.php:213
 msgid "Show as list"
 msgstr "Visa som lista"
 
-#: source/php/App.php:204
+#: source/php/App.php:214
 msgid "Show as cards"
 msgstr "Visa som rutor"
 
-#: source/php/App.php:205
+#: source/php/App.php:215
 msgid "Write a new protocol"
 msgstr "Skriv ett nytt protokoll"
 
-#: source/php/App.php:206
+#: source/php/App.php:216
 msgid "Latest"
 msgstr "Senaste"
 
-#: source/php/App.php:207
+#: source/php/App.php:217
 msgid "Most viewed"
 msgstr "Mest visade"
 
-#: source/php/App.php:208
+#: source/php/App.php:218
 msgid "Comments"
 msgstr "Kommentarer"
 
-#: source/php/App.php:209 source/php/Module/Event/Event.php:389
+#: source/php/App.php:219 source/php/Module/Event/Event.php:389
 msgid "Previous"
 msgstr "Föregående"
 
-#: source/php/App.php:210 source/php/Module/Event/Event.php:388
+#: source/php/App.php:220 source/php/Module/Event/Event.php:388
 msgid "Next"
 msgstr "Nästa"
 
-#: source/php/App.php:211
+#: source/php/App.php:221
 msgid "No protocols found"
 msgstr "Inga protokoll hittades"
 
@@ -431,7 +431,7 @@ msgstr ""
 msgid "protocol"
 msgstr "Protokoll"
 
-#: source/php/PostTypes/Protocol.php:155
+#: source/php/PostTypes/Protocol.php:155 source/php/PostTypes/Protocol.php:376
 #, fuzzy
 #| msgid "protocols"
 msgid "Protocols"
@@ -498,6 +498,15 @@ msgstr "Titel"
 msgid "Read more"
 msgstr "Läs mer"
 
+#: vendor/helsingborg-stad/acf-export-manager/src/AcfExportManager.php:364
+msgid "Export with AcfExportManager"
+msgstr ""
+
+#: vendor/helsingborg-stad/acf-export-manager/src/AcfExportManager.php:408
+#, php-format
+msgid "Exported %d fieldgroup(s)."
+msgstr ""
+
 #. Plugin Name of the plugin/theme
 msgid "Student Council Protocols"
 msgstr ""
@@ -517,6 +526,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/helsingborg-stad"
 msgstr ""
+
+#~ msgid "No events could be found."
+#~ msgstr "Inga protokoll hittades"
 
 #, php-format
 #~ msgid "View %s"

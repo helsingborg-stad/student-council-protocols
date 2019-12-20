@@ -147,9 +147,10 @@ input[type="radio"] {
 }
 
 .search-error {
-  color: $color-danger;
+  color: $color-danger !important;
   font-weight: 500;
   opacity: 1;
+  -webkit-text-fill-color: $color-danger !important;
 }
 
 .input-group-addon {

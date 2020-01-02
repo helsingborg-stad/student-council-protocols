@@ -10,7 +10,6 @@ class App
     {
         new PostTypes\Protocol();
 
-        add_action('init', array($this, 'initialize'));
         add_action('wp_ajax_nopriv_userVisitAjax', array($this, 'userVisitAjax'));
         add_action('wp_ajax_userVisitAjax', array($this, 'userVisitAjax'));
         add_action('wp_enqueue_scripts', array($this, 'script'), 5);
@@ -112,12 +111,6 @@ class App
         $users = get_users(array('fields' => array( 'ID' )));
         $schoolsAndPoliticians = $this->getSchoolsAndPoliticians($users);
         return rest_ensure_response($schoolsAndPoliticians);
-    }
-
-    public function initialize()
-    {
-        $userId = get_current_user_id();
-        update_user_meta($userId, 'council_or_politician', 'council');
     }
 
     public function userVisitAjax() {

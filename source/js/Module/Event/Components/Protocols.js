@@ -155,13 +155,11 @@ class Protocols extends React.Component {
 
                 const mappedSubjects = res.data[0].metadata.data.allSubjects.map(subject => subject.value);
                 const params = this.getParams();
-                
-                // Clear Params
-                window.history.pushState({}, document.title, '/protocol');
+                const decodedParams = decodeURIComponent((params + '').replace(/\+/g, '%20'));
 
                 this.setState({
                     targetGroupValue: params ? 'all' : targetGroupValue,
-                    targetSubjectValue: params ? params : targetSubjectValue,
+                    targetSubjectValue: params ? decodedParams : targetSubjectValue,
                     protocols: res.data,
                     filteredProtocols: res.data,
                     councilProtocols: this.filterProtocols(res.data, 'council'),
@@ -171,12 +169,16 @@ class Protocols extends React.Component {
                     totalProtocols: res['x-wp-total'],
                     searching: false,
                     authors: this.checkAuthors(),
+                }, () => {
+                    window.history.pushState({}, document.title, '/protocol');
                 })
             } else {
                 this.setState({
                     protocols: res.data,
                     filteredProtocols: res.data,
                     searching: false
+                }, () => {
+                    window.history.pushState({}, document.title, '/protocol');
                 })
             }
         }).catch(err => {

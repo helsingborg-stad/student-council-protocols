@@ -223,13 +223,7 @@ class Event extends \Modularity\Module
                     'hide_empty' => false,
                 )
             );
-            // echo '<pre>asdasd';
-            // print_r($categories);
-            // echo '</pre>';
-            // die();
         }
-
-        // $categories = \StudentCouncilProtocols\Helper\Translations::filterTermsByLanguage($categories);
 
         foreach ($categories as &$category) {
             $category = array(
@@ -239,10 +233,6 @@ class Event extends \Modularity\Module
             );
         }
 
-        // echo '<pre>';
-        // print_r($categories);
-        // echo '</pre>';
-        // die();
         $categories = (array) $categories;
         return $categories;
     }
@@ -276,8 +266,6 @@ class Event extends \Modularity\Module
                 )
             );
         }
-
-        // $tags = \StudentCouncilProtocols\Helper\Translations::filterTermsByLanguage($tags);
 
         foreach ($tags as &$tag) {
             $tag = array(

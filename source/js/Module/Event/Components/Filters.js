@@ -27,7 +27,6 @@ const renderSubjects = (allSubjects, filterHandler, targetSubjectValue) => {
 const Filters = ({ filterHandler, state, translations }) => {
 
   const authorClass = (state.targetGroupValue == 'all') ? 'hidden' : '';
-  const caretClass = state.searching ? 'hidden' : '';
 
   return (
     <div className="filter-content">
@@ -80,12 +79,10 @@ const Filters = ({ filterHandler, state, translations }) => {
           <div className={`author-select ${authorClass}`}>
               <span className="authors-label">{translations.writtenBy}</span>
               {state.authors.length > 0 ? renderAuthors(state.authors, filterHandler, state.targetAuthorValue) : ''}
-              <i className={`pricon pricon-caret-right ${caretClass}`}></i>
           </div>
           <div className="subject-select">
               <span className="subjects-label">{translations.subject}</span>
               {state.allSubjects.length > 0 ? renderSubjects(state.allSubjects, filterHandler, state.targetSubjectValue) : ''}
-              <i className={`pricon pricon-caret-right ${caretClass}`}></i>
           </div>
       </div>
   </div>

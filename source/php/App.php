@@ -10,7 +10,6 @@ class App
     {
         new PostTypes\Protocol();
 
-        add_action('init', array($this, 'initialize'));
         add_action('wp_ajax_nopriv_userVisitAjax', array($this, 'userVisitAjax'));
         add_action('wp_ajax_userVisitAjax', array($this, 'userVisitAjax'));
         add_action('wp_enqueue_scripts', array($this, 'script'), 5);
@@ -114,12 +113,6 @@ class App
         return rest_ensure_response($schoolsAndPoliticians);
     }
 
-    public function initialize()
-    {
-        $userId = get_current_user_id();
-        update_user_meta($userId, 'council_or_politician', 'council');
-    }
-
     public function userVisitAjax() {
 
         $postId = $_POST['postId'];
@@ -197,6 +190,7 @@ class App
         $translations = array(
             'pageTitle' => __('All Protocols', 'student-council-protocols'),
             'searchPlaceholder' => __('Search all posts...', 'student-council-protocols'),
+            'searchPlaceholderError' => __('You have to fill in this field.', 'student-council-protocols'),
             'searchAllPosts' => __('Search all posts', 'student-council-protocols'),
             'filterTitle' => __('Filter', 'student-council-protocols'),
             'council' => __('Council', 'student-council-protocols'),
@@ -217,7 +211,7 @@ class App
             'comments' => __('Comments', 'student-council-protocols'),
             'previous' => __('Previous', 'student-council-protocols'),
             'next' => __('Next', 'student-council-protocols'),
-            'noProtocolsFound' => __('No protocols found', 'student-council-protocols')
+            'noProtocolsFound' => __('No protocols found', 'student-council-protocols'),
         );
 
         wp_localize_script('protocol-react-index', 'reactData', array(

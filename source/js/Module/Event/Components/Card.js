@@ -1,12 +1,20 @@
 import React from 'react';
 
-const editBtn = (protocol) => {
-  if (protocol.metadata.data.currentUserId === protocol.author) {
+const editBtn = (protocol, authenticated) => {
+  if (authenticated) {
       return (
           <a href={`${protocol.link}#modal-edit-post`} class="card-edit-btn">
               <i class="pricon pricon-pen pricon-pen-white"></i>
           </a>
       )
+  }
+}
+
+const commentLink = (protocol, authenticated, comments) => {
+  if (authenticated) {
+    return (
+      <a href={`${protocol.link}#comments`} className="card-small-text card-comments-link">{comments} ({protocol.metadata.data.commentsCount})</a>
+    );
   }
 }
 
@@ -23,7 +31,8 @@ const Card = ({ protocols, translations, state }) => {
 
   const {
     showAs,
-    protocolTruncateSize
+    protocolTruncateSize,
+    authenticated
   } = state;
 
   const gridClass = (showAs == 'cards') ? 'grid-sm-6 grid-md-4 grid-lg-3' : '';
@@ -39,12 +48,12 @@ const Card = ({ protocols, translations, state }) => {
                             <div className="card-body">
                                 <h4 className="card-title">{truncate(protocol.metadata.data.title, 75)}</h4>
                                 
-                                {editBtn(protocol)}
+                                {editBtn(protocol, authenticated)}
                                 <div className="card-info">
                                     <span className="card-small-text">{protocol.metadata.data.name_of_council_or_politician}</span>
                                     <br></br>
                                     <time className="card-small-text">{protocol.date.split('T')[0]}</time>
-                                    <a href={`${protocol.link}#comments`} className="card-small-text card-comments-link">{comments} ({protocol.metadata.data.commentsCount})</a>
+                                    {commentLink(protocol, authenticated, comments)}
                                 </div>
                                 <p class="card-paragraph">
                                     {truncate(protocol.metadata.data.content, protocolTruncateSize)}

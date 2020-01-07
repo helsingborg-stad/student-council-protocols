@@ -169,6 +169,7 @@ class Protocols extends React.Component {
                     totalProtocols: res['x-wp-total'],
                     searching: false,
                     authors: this.checkAuthors(),
+                    authenticated: res.data[0].metadata.data['authenticated']
                 }, () => {
                     window.history.pushState({}, document.title, '/protocol');
                 })

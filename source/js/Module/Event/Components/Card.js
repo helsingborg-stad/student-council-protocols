@@ -1,7 +1,7 @@
 import React from 'react';
 
-const editBtn = (protocol, authenticated) => {
-  if (authenticated) {
+const editBtn = (protocol) => {
+  if (protocol.metadata.data.currentUserId === protocol.author) {
       return (
           <a href={`${protocol.link}#modal-edit-post`} class="card-edit-btn">
               <i class="pricon pricon-pen pricon-pen-white"></i>
@@ -48,7 +48,7 @@ const Card = ({ protocols, translations, state }) => {
                             <div className="card-body">
                                 <h4 className="card-title">{truncate(protocol.metadata.data.title, 75)}</h4>
                                 
-                                {editBtn(protocol, authenticated)}
+                                {editBtn(protocol)}
                                 <div className="card-info">
                                     <span className="card-small-text">{protocol.metadata.data.name_of_council_or_politician}</span>
                                     <br></br>

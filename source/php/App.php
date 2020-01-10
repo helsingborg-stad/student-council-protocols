@@ -128,7 +128,7 @@ class App
         }
 
         return true;
-      }
+    }
 
     public function viewPaths($paths)
     {
@@ -147,7 +147,7 @@ class App
         wp_register_script(
             'student-council-protocols', 
             STUDENTCOUNCILPROTOCOLS_URL.'/dist/'.\StudentCouncilProtocols\Helper\CacheBust::name(
-                'js/student-user-visit.js',
+                'js/student-council-protocols.js',
                 false
             ), 
             array('jQuery'), 

@@ -17,7 +17,7 @@ module.exports = {
      */
     entry: {
         'js/student-react': './source/js/Module/Event/Index.js',
-        'js/student-user-visit': './source/js/front/user-visit.js',
+        'js/student-council-protocols': './source/js/front/student-council-protocols.js',
         'css/student-styles': './source/sass/student-council-protocols.scss',
     },
     

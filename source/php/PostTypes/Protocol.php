@@ -229,6 +229,7 @@ class Protocol
             update_post_meta($postId, 'subjects', $subjects);
             update_post_meta($postId, 'name_of_council_or_politician', $name);
             update_post_meta($postId, 'target_group', $targetGroup);
+            update_post_meta($postId, 'number_of_visits', 0);
         }
 
         if (!$update) {

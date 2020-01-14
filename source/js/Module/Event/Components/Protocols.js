@@ -19,7 +19,7 @@ class Protocols extends React.Component {
         this.state = {
             searching: true,
             pageCount: null,
-            protocolsPerPage: 4,
+            protocolsPerPage: 8,
             totalProtocols: '...',
             selectedPage: 0,
             offset: 0,
@@ -295,12 +295,15 @@ class Protocols extends React.Component {
     }
 
 
-    buttonClick = e => {
+    orderButtonClick = e => {
         e.persist();
         e.preventDefault();
-        const dataButton = e.target.getAttribute('data-button');
+        const dataOrder = e.target.getAttribute('data-order');
+        this.paginateRef.current.state.selected = 0
         this.setState({
-            targetOrderValue: dataButton
+            targetOrderValue: dataOrder,
+            offset: 0,
+            selectedPage: 0
         }, () => this.getAllProtocols());
     }
 
@@ -424,7 +427,7 @@ class Protocols extends React.Component {
                 <div className="protocols">
                     <SearchingOverlay searching={this.state.searching}/>
                     <div className="container">
-                        <ProtocolsButtons translations={reactData.translations} buttonClick={this.buttonClick} state={this.state}/>
+                        <ProtocolsButtons translations={reactData.translations} orderButtonClick={this.orderButtonClick} state={this.state}/>
                         <Card protocols={filteredProtocols} translations={reactData.translations} state={this.state} />
                     </div>
                 </div>

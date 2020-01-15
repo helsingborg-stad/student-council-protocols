@@ -164,6 +164,7 @@ input[type="radio"] {
 }
 
 .fa.fa-search {
+  font-size:17px;
   margin-right: 10px;
 }
 
@@ -341,10 +342,6 @@ input[type="radio"] {
 .card-body {
   color: $color-text;
 }
-
-// .card-small-text {
-//   font-weight: 300;
-// }
 
 .card-comments-link {
   text-decoration: underline !important;

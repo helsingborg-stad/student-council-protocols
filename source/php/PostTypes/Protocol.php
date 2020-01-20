@@ -210,11 +210,10 @@ class Protocol
         $userMeta = get_user_meta(get_current_user_id());
         $postFormData = $_POST;
 
-        if (!empty($userMeta['name_of_council_or_politician']) && !empty($userMeta['target_group']) && !empty($postFormData) && !empty($postFormData['valj-amnen-kategorier'])) {
+        if (!empty($userMeta['name_of_council_or_politician']) && !empty($userMeta['target_group'])) {
 
             $name = $userMeta['name_of_council_or_politician'][0];
             $targetGroup = $userMeta['target_group'][0];
-            $subjects = $postFormData['valj-amnen-kategorier'];
 
             $term = term_exists($targetGroup, 'protocol_target_groups');
             if ($term !== 0 && $term !== null) {
@@ -224,6 +223,10 @@ class Protocol
                 if (!is_wp_error($newTerm)) {
                     wp_set_object_terms($postId, (int)$newTerm['term_id'], 'protocol_target_groups');
                 }
+            }
+
+            if (!empty($postFormData) && !empty($postFormData['valj-amnen-kategorier'])) {
+                $subjects = $postFormData['valj-amnen-kategorier'];
             }
 
             update_post_meta($postId, 'subjects', $subjects);

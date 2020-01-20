@@ -249,18 +249,21 @@ class Protocols extends React.Component {
 
     handleKeyUp = e => {
         e.persist();
-
-        this.setState({
-            searchPlaceholderText: reactData.translations.searchPlaceholder,
-            searchError: false
-        }, () => {
-            if (e.keyCode === 13) {
-                this.searchSubmit(e);
-            }
-            if (!e.target.value) {
-                this.getAllProtocols();
-            }
-        })
+        if (!this.state.searchString) {
+            this.setState({
+                searchPlaceholderText: reactData.translations.searchPlaceholderError,
+                searchError: true
+            })
+        } else {
+            this.setState({
+                searchPlaceholderText: reactData.translations.searchPlaceholder,
+                searchError: false
+            }, () => {
+                if (e.keyCode === 13) {
+                    this.searchSubmit(e);
+                }
+            })
+        }
     }
 
     /**
@@ -271,7 +274,7 @@ class Protocols extends React.Component {
         e.preventDefault();
         e.persist();
         this.paginateRef.current.state.selected = 0
-        if (this.state.searchString === '') {
+        if (!this.state.searchString) {
             this.setState({
                 searchPlaceholderText: reactData.translations.searchPlaceholderError,
                 searchError: true
@@ -323,7 +326,7 @@ class Protocols extends React.Component {
                 this.setState({
                     showAs: 'list',
                     showAsText: showAsCards,
-                    protocolTruncateSize: 350
+                    protocolTruncateSize: 500
                 });
             break;
 

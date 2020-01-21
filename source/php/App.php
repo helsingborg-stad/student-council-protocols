@@ -205,7 +205,7 @@ class App
             'protocols' => __('protocols', 'student-council-protocols'),
             'showAsList' => __('Show as list', 'student-council-protocols'),
             'showAsCards' => __('Show as cards', 'student-council-protocols'),
-            'writeNewProtocol' => __('Write a new protocol', 'student-council-protocols'),
+            'writeNewPost' => __('Write a new post', 'student-council-protocols'),
             'latest' => __('Latest', 'student-council-protocols'),
             'mostViewed' => __('Most viewed', 'student-council-protocols'),
             'comments' => __('Comments', 'student-council-protocols'),

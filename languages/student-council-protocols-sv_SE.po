@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: protocol Manager\n"
-"POT-Creation-Date: 2019-12-18 14:42+0100\n"
-"PO-Revision-Date: 2019-12-18 14:42+0100\n"
+"POT-Creation-Date: 2020-01-21 13:09+0100\n"
+"PO-Revision-Date: 2020-01-21 13:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -27,7 +27,7 @@ msgid "Administration unit"
 msgstr "Förvaltning"
 
 #: acf-fields/php/protocol_status.php:8 acf-fields/php/protocol_status.php:12
-#: source/php/PostTypes/Protocol.php:170
+#: source/php/PostTypes/Protocol.php:123
 msgid "Status"
 msgstr "Status"
 
@@ -43,99 +43,99 @@ msgstr "Bakgrundsfärg"
 msgid "Select a custom background color for the taxonomy."
 msgstr "Välj en anpassad bakgrundsfärg för taxonomin."
 
-#: source/php/App.php:198
+#: source/php/App.php:191
 msgid "All Protocols"
 msgstr "Alla protokoll"
 
-#: source/php/App.php:199
+#: source/php/App.php:192
 msgid "Search all posts..."
 msgstr "Sök alla inlägg…"
 
-#: source/php/App.php:200
+#: source/php/App.php:193
 msgid "You have to fill in this field."
 msgstr "Du måste fylla i detta fältet"
 
-#: source/php/App.php:201
+#: source/php/App.php:194
 msgid "Search all posts"
 msgstr "Sök alla inlägg"
 
-#: source/php/App.php:202
+#: source/php/App.php:195
 msgid "Filter"
 msgstr "Filtrera"
 
-#: source/php/App.php:203
+#: source/php/App.php:196
 msgid "Council"
 msgstr "Elevråd"
 
-#: source/php/App.php:204
+#: source/php/App.php:197
 msgid "Politician"
 msgstr "Politiker & Tjänstemän"
 
-#: source/php/App.php:205
+#: source/php/App.php:198
 msgid "All"
 msgstr "Alla"
 
-#: source/php/App.php:206
+#: source/php/App.php:199
 msgid "All councils"
 msgstr "Alla elevråd"
 
-#: source/php/App.php:207
+#: source/php/App.php:200
 msgid "All politicians"
 msgstr "Alla politiker"
 
-#: source/php/App.php:208
+#: source/php/App.php:201
 msgid "All subjects"
 msgstr "Alla ämnen"
 
-#: source/php/App.php:209
+#: source/php/App.php:202
 msgid "Written By"
 msgstr "Skriven av"
 
-#: source/php/App.php:210
+#: source/php/App.php:203
 msgid "Subject"
 msgstr "Ämne"
 
-#: source/php/App.php:211
+#: source/php/App.php:204
 msgid "Found"
 msgstr "Hittade"
 
-#: source/php/App.php:212
+#: source/php/App.php:205
 msgid "protocols"
 msgstr "protokoll"
 
-#: source/php/App.php:213
+#: source/php/App.php:206
 msgid "Show as list"
 msgstr "Visa som lista"
 
-#: source/php/App.php:214
+#: source/php/App.php:207
 msgid "Show as cards"
 msgstr "Visa som rutor"
 
-#: source/php/App.php:215
-msgid "Write a new protocol"
-msgstr "Skriv ett nytt protokoll"
+#: source/php/App.php:208
+msgid "Write a new post"
+msgstr "Skriv ett nytt inlägg"
 
-#: source/php/App.php:216
+#: source/php/App.php:209
 msgid "Latest"
 msgstr "Senaste"
 
-#: source/php/App.php:217
+#: source/php/App.php:210
 msgid "Most viewed"
 msgstr "Mest visade"
 
-#: source/php/App.php:218
+#: source/php/App.php:211
 msgid "Comments"
 msgstr "Kommentarer"
 
-#: source/php/App.php:219 source/php/Module/Event/Event.php:389
+#: source/php/App.php:212 source/php/Module/Event/Event.php:377
 msgid "Previous"
 msgstr "Föregående"
 
-#: source/php/App.php:220 source/php/Module/Event/Event.php:388
+#: source/php/App.php:213 source/php/Module/Event/Event.php:376
 msgid "Next"
 msgstr "Nästa"
 
-#: source/php/App.php:221
+#: source/php/App.php:214
 msgid "No protocols found"
 msgstr "Inga protokoll hittades"
 
@@ -151,61 +151,61 @@ msgstr ""
 msgid "Outputs a list if upcoming events"
 msgstr ""
 
-#: source/php/Module/Event/Event.php:386
+#: source/php/Module/Event/Event.php:374
 #: source/php/Module/Event/views/event.blade.php:18
 msgid "More events"
 msgstr ""
 
-#: source/php/Module/Event/Event.php:387
+#: source/php/Module/Event/Event.php:375
 #: source/php/Module/Event/views/partials/list.blade.php:4
 #, fuzzy
 #| msgid "No %s found"
 msgid "No events found"
 msgstr "Inga %s hittades"
 
-#: source/php/Module/Event/Event.php:390
+#: source/php/Module/Event/Event.php:378
 #, fuzzy
 #| msgid "Search %s"
 msgid "Search"
 msgstr "Sök %s"
 
-#: source/php/Module/Event/Event.php:391
+#: source/php/Module/Event/Event.php:379
 #: source/php/Module/SubmitForm/views/formfields.blade.php:322
 #: source/php/Module/SubmitForm/views/formfields.blade.php:325
 msgid "From"
 msgstr ""
 
-#: source/php/Module/Event/Event.php:392
+#: source/php/Module/Event/Event.php:380
 #: source/php/Module/SubmitForm/views/formfields.blade.php:329
 #: source/php/Module/SubmitForm/views/formfields.blade.php:332
 msgid "To"
 msgstr ""
 
-#: source/php/Module/Event/Event.php:393
+#: source/php/Module/Event/Event.php:381
 msgid "date"
 msgstr ""
 
-#: source/php/Module/Event/Event.php:394
+#: source/php/Module/Event/Event.php:382
 msgid "Categories"
 msgstr "Kategorier"
 
-#: source/php/Module/Event/Event.php:395
+#: source/php/Module/Event/Event.php:383
 msgid "Tags"
 msgstr ""
 
-#: source/php/Module/Event/Event.php:396
+#: source/php/Module/Event/Event.php:384
 msgid "Age"
 msgstr ""
 
-#: source/php/Module/Event/Event.php:398
+#: source/php/Module/Event/Event.php:386
 msgid "Filter on events that is targeted for given the age"
 msgstr ""
 
-#: source/php/Module/Event/Event.php:401
+#: source/php/Module/Event/Event.php:389
 msgid "years"
 msgstr ""
 
-#: source/php/Module/Event/Event.php:402
+#: source/php/Module/Event/Event.php:390
 msgid "Select age"
 msgstr ""
 
@@ -216,7 +216,7 @@ msgstr ""
 #: source/php/Module/Event/views/partials/list.blade.php:59
 #: source/php/Module/SubmitForm/views/formfields.blade.php:69
 #: source/php/Module/SubmitForm/views/formfields.blade.php:88
-#: source/php/PostTypes/Protocol.php:329
+#: source/php/PostTypes/Protocol.php:290
 msgid "Date"
 msgstr "Datum"
 
@@ -427,70 +427,70 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: source/php/PostTypes/Protocol.php:154
+#: source/php/PostTypes/Protocol.php:107
 msgid "protocol"
 msgstr "Protokoll"
 
-#: source/php/PostTypes/Protocol.php:155 source/php/PostTypes/Protocol.php:376
+#: source/php/PostTypes/Protocol.php:108 source/php/PostTypes/Protocol.php:337
 #, fuzzy
 #| msgid "protocols"
 msgid "Protocols"
 msgstr "Idéer"
 
-#: source/php/PostTypes/Protocol.php:171
+#: source/php/PostTypes/Protocol.php:124
 msgid "Statuses"
 msgstr "Statusar"
 
-#: source/php/PostTypes/Protocol.php:203
+#: source/php/PostTypes/Protocol.php:156
 msgid "Target group"
 msgstr ""
 
-#: source/php/PostTypes/Protocol.php:204
+#: source/php/PostTypes/Protocol.php:157
 msgid "Target groups"
 msgstr ""
 
-#: source/php/PostTypes/Protocol.php:244
+#: source/php/PostTypes/Protocol.php:191
 #, php-format
 msgid "Search %s"
 msgstr "Sök %s"
 
-#: source/php/PostTypes/Protocol.php:245
+#: source/php/PostTypes/Protocol.php:192
 #, php-format
 msgid "All %s"
 msgstr ""
 
-#: source/php/PostTypes/Protocol.php:246 source/php/PostTypes/Protocol.php:247
+#: source/php/PostTypes/Protocol.php:193 source/php/PostTypes/Protocol.php:194
 #, php-format
 msgid "Parent %s:"
 msgstr "Förälder %s:"
 
-#: source/php/PostTypes/Protocol.php:248
+#: source/php/PostTypes/Protocol.php:195
 #, php-format
 msgid "Edit %s"
 msgstr "Redigera %s"
 
-#: source/php/PostTypes/Protocol.php:249
+#: source/php/PostTypes/Protocol.php:196
 #, php-format
 msgid "Update %s"
 msgstr ""
 
-#: source/php/PostTypes/Protocol.php:250
+#: source/php/PostTypes/Protocol.php:197
 #, fuzzy, php-format
 #| msgid "Add new %s"
 msgid "Add New %s"
 msgstr "Skapa ny %s"
 
-#: source/php/PostTypes/Protocol.php:251
+#: source/php/PostTypes/Protocol.php:198
 #, fuzzy, php-format
 #| msgid "New %s"
 msgid "New %s Name"
 msgstr "Ny %s"
 
-#: source/php/PostTypes/Protocol.php:279
+#: source/php/PostTypes/Protocol.php:240
 msgid "Incoming"
 msgstr "Inkommande"
 
-#: source/php/PostTypes/Protocol.php:328
+#: source/php/PostTypes/Protocol.php:289
 msgid "Title"
 msgstr "Titel"
 
@@ -527,14 +527,15 @@ msgstr ""
 msgid "https://github.com/helsingborg-stad"
 msgstr ""
 
+#~ msgid "Write a new protocol"
+#~ msgstr "Skriv ett nytt protokoll"
+
 #~ msgid "No events could be found."
 #~ msgstr "Inga protokoll hittades"
 
-#, php-format
 #~ msgid "View %s"
 #~ msgstr "Visa %s"
 
-#, php-format
 #~ msgid "No %s found in trash"
 #~ msgstr "Inga %s hittades i papperskorgen"
 

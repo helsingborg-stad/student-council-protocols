@@ -7,7 +7,7 @@ const ProtocolsButtons = ({ translations, orderButtonClick, state }) => {
 
   return (
     <div className="protocols-btn-field">
-      <a href={`${window.location.origin}/create-protocol`} className="btn-oval new-protocol-btn"><i class="pricon pricon-plus"></i><span>{translations.writeNewProtocol}</span></a>
+      <a href={`${window.location.origin}/create-protocol`} className="btn-oval new-protocol-btn"><i class="pricon pricon-plus"></i><span>{translations.writeNewPost}</span></a>
 
       <div className="order-btns">
           <a href="" className={`btn-square ${latestClass}`} onClick={orderButtonClick} data-order="latest">{translations.latest}</a>

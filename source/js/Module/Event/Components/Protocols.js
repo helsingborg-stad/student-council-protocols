@@ -176,6 +176,8 @@ class Protocols extends React.Component {
             } else {
                 this.setState({
                     protocols: res.data,
+                    pageCount: res['x-wp-totalPages'],
+                    totalProtocols: res['x-wp-total'],
                     filteredProtocols: res.data,
                     searching: false
                 }, () => {
@@ -249,20 +251,8 @@ class Protocols extends React.Component {
 
     handleKeyUp = e => {
         e.persist();
-        if (!this.state.searchString) {
-            this.setState({
-                searchPlaceholderText: reactData.translations.searchPlaceholderError,
-                searchError: true
-            })
-        } else {
-            this.setState({
-                searchPlaceholderText: reactData.translations.searchPlaceholder,
-                searchError: false
-            }, () => {
-                if (e.keyCode === 13) {
-                    this.searchSubmit(e);
-                }
-            })
+        if (e.keyCode === 13) {
+            this.searchSubmit(e);
         }
     }
 
@@ -273,21 +263,16 @@ class Protocols extends React.Component {
     searchSubmit = e => {
         e.preventDefault();
         e.persist();
-        this.paginateRef.current.state.selected = 0
-        if (!this.state.searchString) {
-            this.setState({
-                searchPlaceholderText: reactData.translations.searchPlaceholderError,
-                searchError: true
-            })
-        } else {
-            this.setState({
-                targetGroupValue: 'all',
-                targetAuthorValue: 'Alla ...',
-                targetSubjectValue: this.translatedString('All subjects')
-            }, () => this.getAllProtocols());
-        }
 
-    
+        this.paginateRef.current.state.selected = 0
+
+        this.setState({
+            targetGroupValue: 'all',
+            targetAuthorValue: 'Alla ...',
+            targetSubjectValue: this.translatedString('All subjects'),
+            offset: 0,
+            selectedPage: 0
+        }, () => this.getAllProtocols());
     };
 
     handlePageClick = data => {

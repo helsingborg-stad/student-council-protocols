@@ -411,6 +411,11 @@ input[type="radio"] {
   transition: .3s;
 }
 
+.pagination > li > a[aria-current="page"] {
+  background-color: $color-blue !important;
+  color: white !important;
+}
+
 .card-edit-btn:hover {
   opacity: .8;
 }

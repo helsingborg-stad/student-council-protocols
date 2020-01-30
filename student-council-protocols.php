@@ -23,10 +23,6 @@ define('STUDENTCOUNCILPROTOCOLS_URL', plugins_url('', __FILE__));
 define('STUDENTCOUNCILPROTOCOLS_VIEW_PATH', STUDENTCOUNCILPROTOCOLS_PATH . 'views/');
 define('STUDENTCOUNCILPROTOCOLS_CACHE_DIR', trailingslashit(wp_upload_dir()['basedir']) . 'cache/blade-cache/');
 
-// echo '<pre>';
-// print_r(plugin_basename(dirname(__FILE__)) . '/languages');
-// echo '</pre>';
-// die();
 load_plugin_textdomain('student-council-protocols', false, plugin_basename(dirname(__FILE__)) . '/languages');
 
 require_once STUDENTCOUNCILPROTOCOLS_PATH . 'source/php/Vendor/Psr4ClassLoader.php';
@@ -42,7 +38,7 @@ add_action('plugins_loaded', function () {
     $acfExportManager->setExportFolder(STUDENTCOUNCILPROTOCOLS_PATH . 'acf-fields/');
     $acfExportManager->autoExport(array(
         'protocol_status' => 'group_5a134a48de846',
-		'administration_unit' => 'group_5a134bb83af1a',
+        'administration_unit' => 'group_5a134bb83af1a',
         'tax_color' => 'group_5ab3a45759ba5'
     ));
     $acfExportManager->import();

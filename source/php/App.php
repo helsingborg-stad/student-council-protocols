@@ -13,31 +13,6 @@ class App
         add_action('wp_ajax_nopriv_userVisitAjax', array($this, 'userVisitAjax'));
         add_action('wp_ajax_userVisitAjax', array($this, 'userVisitAjax'));
         add_action('wp_enqueue_scripts', array($this, 'script'), 5);
-        add_action('plugins_loaded', function () {
-            if (class_exists('\\ModularityFormBuilder\\Entity\\PostType')) {
-                new Shortcode();
-            }
-        });
-
-        /* Register Modularity v2 modules */
-        add_action('plugins_loaded', function () {
-            if (function_exists('modularity_register_module')) {
-                modularity_register_module(
-                    STUDENTCOUNCILPROTOCOLS_PATH . 'source/php/Module/Event',
-                    'Event'
-                );
-
-                modularity_register_module(
-                    STUDENTCOUNCILPROTOCOLS_PATH . 'source/php/Module/Location',
-                    'Location'
-                );
-
-                modularity_register_module(
-                    STUDENTCOUNCILPROTOCOLS_PATH . 'source/php/Module/SubmitForm',
-                    'SubmitForm'
-                );
-            }
-        });
 
         add_filter('Municipio/blade/view_paths', array($this, 'viewPaths'), 10, 1);
         add_action('rest_api_init', array($this, 'registerRestApiMeta'));
@@ -155,10 +130,6 @@ class App
             true
         );
 
-        if (defined('G_GEOCODE_KEY') && G_GEOCODE_KEY) {
-            wp_register_script('google-maps-api', '//maps.googleapis.com/maps/api/js?key=' . G_GEOCODE_KEY . '', array(), '', true);
-        }
-
         wp_register_style('student-council-protocols', STUDENTCOUNCILPROTOCOLS_URL.'/dist/'.\StudentCouncilProtocols\Helper\CacheBust::name(
             'css/student-styles.css',
             false
@@ -167,25 +138,11 @@ class App
         if (is_object($post) && $post->post_type == 'protocol') {
             wp_enqueue_script('student-council-protocols');
             wp_enqueue_style('student-council-protocols');
-            wp_enqueue_script('google-maps-api');
         }
 
         if (is_single()) {
             wp_localize_script('student-council-protocols', 'userVisitData', array('ajax_url' => admin_url('admin-ajax.php'),'nonce' => wp_create_nonce('userVisitNonce'),'post_id' => $post->ID));
         }
-
-        \StudentCouncilProtocols\Helper\React::enqueue();
-
-        wp_enqueue_script(
-            'protocol-react-index',
-            STUDENTCOUNCILPROTOCOLS_URL.'/dist/'.\StudentCouncilProtocols\Helper\CacheBust::name(
-                'js/student-react.js',
-                false
-            ),
-            array('jquery', 'react', 'react-dom'),
-            false,
-            true
-        );
 
         $translations = array(
             'pageTitle' => __('All Protocols', 'student-council-protocols'),
@@ -214,11 +171,22 @@ class App
             'noProtocolsFound' => __('No protocols found', 'student-council-protocols'),
         );
 
+        wp_enqueue_script(
+            'protocol-react-index',
+            STUDENTCOUNCILPROTOCOLS_URL.'/dist/'.\StudentCouncilProtocols\Helper\CacheBust::name(
+                'js/student-react.js',
+                false
+            ),
+            array('jquery', 'react', 'react-dom'),
+            false,
+            true
+        );
+
         wp_localize_script('protocol-react-index', 'reactData', array(
-                'nonce' => wp_create_nonce('wp_rest'),
-                'rest_url' => rest_url(),
-                'translations' => $translations
-            ));
+            'nonce' => wp_create_nonce('wp_rest'),
+            'rest_url' => rest_url(),
+            'translations' => $translations
+        ));
     }
 
     /**

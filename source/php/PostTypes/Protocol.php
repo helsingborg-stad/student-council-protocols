@@ -26,7 +26,6 @@ class Protocol
         add_action('save_post_' . $this->postTypeSlug, array($this, 'setDefaultData'), 10, 3);
         add_action('Municipio/blog/post_info', array($this, 'addProtocolStatusPost'), 9, 1);
         add_filter('wp_insert_post_data', array($this, 'allowComments'), 99, 2);
-        add_filter('is_active_sidebar', array($this, 'isActiveSidebar'), 11, 2);
         add_filter('ModularityFormBuilder/excluded_fields/front', array($this, 'excludedFields'), 10, 3);
         add_filter('Municipio/taxonomy/tag_style', array($this, 'setStatusColor'), 10, 3);
         add_filter('manage_edit-' . $this->postTypeSlug . '_columns', array($this, 'tableColumns'), 11);
@@ -52,21 +51,6 @@ class Protocol
         }
 
         return false;
-    }
-
-    /**
-     * Manually activate right and bottom sidebar to add custom content
-     * @param  boolean  $isActiveSidebar Original response
-     * @param  string   $sidebar         Sidebar id
-     * @return boolean
-     */
-    public function isActiveSidebar($isActiveSidebar, $sidebar)
-    {
-        if (($sidebar === 'right-sidebar' || $sidebar === 'bottom-sidebar') && $this->isprotocolPage()) {
-            return true;
-        }
-
-        return $isActiveSidebar;
     }
 
     /**

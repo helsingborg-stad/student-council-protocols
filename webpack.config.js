@@ -16,7 +16,7 @@ module.exports = {
      * Entry files - Add more entries if needed.
      */
     entry: {
-        'js/student-react': './source/js/Module/Event/Index.js',
+        'js/student-react': './source/js/Module/Protocol/Index.js',
         'js/student-council-protocols': './source/js/front/student-council-protocols.js',
         'css/student-styles': './source/sass/student-council-protocols.scss',
     },

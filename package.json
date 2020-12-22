@@ -46,7 +46,7 @@
     "hbg-react": "^0.11.10",
     "isomorphic-fetch": "^2.2.1",
     "jshint": "^2.10.2",
-    "node-notifier": "^6.0.0",
+    "node-notifier": "^8.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "reactify": "^1.1.1",
